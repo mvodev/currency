@@ -1,4 +1,5 @@
-// src/components/ThemeToggle.tsx
+import darkThemeLogo from '../assets/dark-mode.svg';
+import lightThemeLogo from '../assets/light-mode.svg';
 import { useTheme } from '../context/useTheme';
 
 const ThemeToggle = () => {
@@ -6,7 +7,9 @@ const ThemeToggle = () => {
 
   return (
     <button onClick={toggleTheme}>
-      Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+      {theme === 'light' 
+        ? <img src={lightThemeLogo} alt="Light theme logo" /> 
+        : <img src={darkThemeLogo} alt="Dark theme logo" />}
     </button>
   );
 };
