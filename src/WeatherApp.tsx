@@ -4,10 +4,9 @@ import styles from './WeatherApp.module.css';
 const WeatherApp = () => {
 
   return (
-    <div className={styles.weatherApp}>
+    <main className={styles.weatherApp}>
       <Header/>
-      <h1>Прогноз погоды</h1>
-    </div>
+    </main>
   )
 }
 
