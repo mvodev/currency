@@ -1,14 +1,12 @@
-import ThemeToggle from './components/ThemeToggleButton';
+import Header from './components/header/Header';
 import styles from './WeatherApp.module.css';
 
 const WeatherApp = () => {
 
   return (
     <div className={styles.weatherApp}>
-      <header className={styles.header}>
-        <ThemeToggle/>
-      </header>
-    <h1>Прогноз погоды</h1>
+      <Header/>
+      <h1>Прогноз погоды</h1>
     </div>
   )
 }

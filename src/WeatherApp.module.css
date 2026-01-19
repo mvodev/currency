@@ -25,9 +25,3 @@
   flex-direction: column;
   width: 100%;
 }
-
-.header {
-  height: 80px;
-  width: 100%;
-  background-color: gray;
-}
