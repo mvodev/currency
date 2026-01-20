@@ -16,7 +16,7 @@
   --text-color: #ffffff;
 }
 
-.weatherApp {
+.currencyRateApp {
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;

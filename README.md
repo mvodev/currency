@@ -1,1 +1,1 @@
-# Weather App
+# Currency Rate App
