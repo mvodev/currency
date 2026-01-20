@@ -27,7 +27,7 @@ const CurrencyForm = ({currencies}:Props) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <label className={styles.formLabel}>Валюты:</label>
+      <label className={styles.formLabel}>Выберите валюту курс которой к рублю вы хотите посмотреть:</label>
       <Controller
         name="currencies"
         control={control}
@@ -41,7 +41,7 @@ const CurrencyForm = ({currencies}:Props) => {
           />
         )}
       />
-      <button type="submit">Отправить</button>
+      {/* <button type="submit">Отправить</button> */}
     </form>
   );
 }
