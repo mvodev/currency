@@ -1,6 +1,7 @@
 import Header from './components/header/Header';
-import QueryWeatherForm from './components/queryWeatherForm/QueryWeatherForm';
-import styles from './WeatherApp.module.css';
+import CurrencyForm from './components/currencyForm/CurrencyForm';
+import type { JSONCurrencyData, ApiError } from './types/types';
+import styles from './CurrencyRateApp.module.css';
 import { useQuery } from '@tanstack/react-query';
 
 const fetchCurrencyRate = async () => {
@@ -10,20 +11,18 @@ const fetchCurrencyRate = async () => {
 };
 
 const CurrencyRateAppApp = () => {
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error } = useQuery<JSONCurrencyData, ApiError>({
     queryKey: ['currency'], // Ключ для кэширования
     queryFn: fetchCurrencyRate, // Функция запроса
   });
 
   if (isLoading) return <div>Загрузка...</div>;
   if (isError) return <div>Ошибка: {error.message}</div>;
-  console.log(data)
 
   return (
-  
       <main className={styles.currencyRateApp}>
         <Header/>
-        <QueryWeatherForm/>
+        <CurrencyForm currencies={data}/>
       </main>
   )
 }

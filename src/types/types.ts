@@ -13,3 +13,7 @@ export interface JSONCurrencyData {
   Timestamp: Date;
   Valute:Record<string,Currency>;
 }
+
+export interface ApiError {
+  message: string;
+}
