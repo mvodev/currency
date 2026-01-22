@@ -11,3 +11,29 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
+
+.input {
+  display: flex;
+  height: 38px;
+  padding: 0 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 1px solid #222;
+  background: white;
+  outline: none;
+  margin: 8px 0;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  color: hsl(0, 0%, 20%);
+  text-overflow: ellipsis;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
