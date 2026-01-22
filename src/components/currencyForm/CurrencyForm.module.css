@@ -37,3 +37,8 @@
   font-weight: 400;
   line-height: normal;
 }
+
+.error {
+  color: red;
+  font-weight: normal;
+}

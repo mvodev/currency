@@ -41,7 +41,7 @@ const CurrencyForm = ({currencies}:Props) => {
     formState: { errors } 
   } = useForm<FormData>();
   const onSubmit = (data:FormData) => {
-    console.log(data.currencies.value); 
+    console.log(data); 
   };
 
   const options:{label:string,value:string}[] = [];
@@ -54,13 +54,17 @@ const CurrencyForm = ({currencies}:Props) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <label className={styles.formLabel}>
-      Введите количество в рублях:
+        Введите количество в рублях:
         <input className={styles.input}
-        {...register('rubQuantity', { required: true })}/>
+        {...register('rubQuantity', { required: true, validate: (value) => !Number.isNaN(value) })}/>
         {errors.rubQuantity?.type === 'required' && (
           <span className={styles.error}>Введите значение</span>)}
+        {errors.rubQuantity?.type === 'validate' && (
+          <span className={styles.error}>Введите число</span>)}
       </label>
-      <label className={styles.formLabel}>Выберите валюту курс которой к рублю вы хотите посмотреть:</label>
+      <label className={styles.formLabel}>
+        Выберите валюту курс которой к рублю вы хотите посмотреть:
+      </label>
         <Controller
           name="currencies"
           control={control}
@@ -75,7 +79,7 @@ const CurrencyForm = ({currencies}:Props) => {
             />
           )}
         />
-      {/* <button type="submit">Отправить</button> */}
+      <button type="submit">Отправить</button>
     </form>
   );
 }
